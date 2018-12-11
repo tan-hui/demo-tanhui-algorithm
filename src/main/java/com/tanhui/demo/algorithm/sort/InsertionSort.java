@@ -23,4 +23,21 @@ public class InsertionSort {
         }
         return arr;
     }
+
+    public static int[] sort2(int[] arr) {
+        if (arr.length == 0) {
+            return arr;
+        }
+        for (int i = 1; i < arr.length; i++) {
+            int preIndex = i - 1;
+            int temp = arr[i];
+            while (preIndex >= 0 && arr[preIndex] > temp) {
+                arr[preIndex + 1] = arr[preIndex];
+                preIndex--;
+            }
+            arr[preIndex + 1] = temp;
+        }
+
+        return arr;
+    }
 }
